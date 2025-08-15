@@ -1,0 +1,23 @@
+[package]
+name = "rs-wikipage2ql"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies.async-graphql]
+version = "7"
+default-features = false
+features = [
+]
+
+[dependencies.async-trait]
+version = "0"
+default-features = false
+features = [
+]
+
+[dependencies.rs-wikipages2struct]
+version = "0.1.0"
+default-features = false
+features = [
+	"enable-graphql",
+]
