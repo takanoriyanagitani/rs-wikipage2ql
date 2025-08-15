@@ -1,0 +1,43 @@
+[package]
+name = "wikipage2ql"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies.rs-wikipage2ql]
+path = "../../.."
+
+[dependencies.async-graphql-axum]
+version = "7"
+default-features = false
+features = [
+]
+
+[dependencies.axum]
+version = "0"
+default-features = false
+features = [
+	"form",
+	"http1",
+	"json",
+	"matched-path",
+	"original-uri",
+	"query",
+	"tokio",
+	"tower-log",
+	"tracing",
+]
+
+[dependencies.tokio]
+version = "1"
+default-features = false
+features = [
+	"macros",
+	"rt-multi-thread",
+	"net",
+]
+
+[dependencies.rs-wikibzip2pages]
+version = "0.1.0"
+default-features = false
+features = [
+]

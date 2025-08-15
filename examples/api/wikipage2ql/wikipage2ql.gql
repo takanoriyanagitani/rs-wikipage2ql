@@ -1,0 +1,46 @@
+input BasicFilter {
+	namespace: String
+	title: String
+	hasRedirect: Boolean
+}
+
+type Page {
+	title: String
+	namespace: String
+	id: String
+	redirect: Redirect
+	restrictions: String
+	revision: Revision
+}
+
+type QueryEx {
+	pages(offset: Int!, size: Int!, filter: BasicFilter): [Page!]!
+}
+
+type Redirect {
+	title: String
+}
+
+type Revision {
+	id: String
+	parentId: String
+	timestamp: String
+	comment: String
+	origin: String
+	model: String
+	format: String
+	text: String
+	sha1: String
+}
+
+"""
+Directs the executor to include this field or fragment only when the `if` argument is true.
+"""
+directive @include(if: Boolean!) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+"""
+Directs the executor to skip this field or fragment when the `if` argument is true.
+"""
+directive @skip(if: Boolean!) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+schema {
+	query: QueryEx
+}
